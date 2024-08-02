@@ -34,10 +34,8 @@ cloudinary.config({
 });
 
 // Set up Multer for file uploads
-const upload = multer({
-  storage: multer.diskStorage({}),
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20 MB
-});
+const storage = multer.diskStorage({});
+const upload = multer({ storage });
 
 // API endpoints
 app.post(
